@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>work.shiyanwu</groupId>
+    <artifactId>spring-boot-samples</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <description>Spring Boot 示例项目</description>
+
+    <developers>
+        <developer>
+            <name>史延武</name>
+            <email>291122524@qq.com</email>
+            <url>https://github.com/291122524</url>
+        </developer>
+    </developers>
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/291122524/spring-boot-samples</url>
+        <connection>
+            scm:git:git://github.com/291122524/spring-boot-samples.git
+        </connection>
+        <developerConnection>
+            scm:git:ssh://git@github.com/291122524/spring-boot-samples.git
+        </developerConnection>
+        <tag>master</tag>
+    </scm>
+    <url>https://github.com/291122524/spring-boot-samples</url>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <!-- 源文件字符集编码 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- 打包跳过单元测试 -->
+        <skipTests>true</skipTests>
+
+        <spring-data-releasetrain.version>Moore-SR6</spring-data-releasetrain.version>
+        <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+
+        <org.projectlombok.version>1.18.10</org.projectlombok.version>
+    </properties>
+
+    <modules>
+        <module>spring-boot-samples-log4j2</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 升级Spring Data, 覆盖 Spring Boot提供的默认版本  -->
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-releasetrain</artifactId>
+                <version>${spring-data-releasetrain.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Boot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
