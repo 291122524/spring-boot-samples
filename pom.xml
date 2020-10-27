@@ -44,14 +44,15 @@
         <!-- 打包跳过单元测试 -->
         <skipTests>true</skipTests>
 
-        <spring-data-releasetrain.version>Moore-SR6</spring-data-releasetrain.version>
-        <spring-boot.version>2.2.6.RELEASE</spring-boot.version>
+        <spring-data-releasetrain.version>Neumann-SR4</spring-data-releasetrain.version>
+        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
 
-        <org.projectlombok.version>1.18.10</org.projectlombok.version>
+        <org.projectlombok.version>1.18.16</org.projectlombok.version>
     </properties>
 
     <modules>
         <module>spring-boot-samples-log4j2</module>
+        <module>spring-boot-samples-elasticsearch</module>
     </modules>
 
     <dependencyManagement>
@@ -75,4 +76,21 @@
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
